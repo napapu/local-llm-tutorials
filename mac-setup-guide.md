@@ -55,8 +55,8 @@ llama-server \
     --port 8001 \
     --chat-template-kwargs '{"enable_thinking":false}'
 ```
-    - Go to `http://localhost:8001`
-    - Ask it anything. You have an LLM on your machine now.
+ - Go to `http://localhost:8001`
+- Ask it anything. You have an LLM on your machine now.
 > See [this article](https://unsloth.ai/docs/models/qwen3.5#qwen3.5-small-0.8b-2b-4b-9b) on what these values should be for this specific LLM. Set `"enable_thinking":true` , start chatting, then expand the Reasoning bar to go down a rabbit hole. But now it also takes much longer to respond.
 
 > See the [README](https://github.com/ggml-org/llama.cpp/tree/master/tools/server#llamacpp-http-server) for explanation on what the parameters do.
