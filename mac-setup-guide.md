@@ -14,8 +14,8 @@ Feel free to skip any steps if they don't apply to you.
 > See [GGUF](https://huggingface.co/docs/transformers/en/gguf) for more information. 
 
 4. Download your first LLM from huggingface.
-    - `uvx hf download unsloth/Qwen3.5-9B-GGUF Qwen3.5-9B-UD-Q6_K_XL.gguf --local-dir ~/gguf`
-    - If that doesn't work, download directly on [huggingface site](https://huggingface.co/unsloth/Qwen3.5-9B-GGUF?show_file_info=Qwen3.5-9B-UD-Q6_K_XL.gguf). The **Download** button is on the right.
+    - `uvx hf download unsloth/Qwen3.5-35B-A3B-GGUF Qwen3.5-35B-A3B-UD-IQ2_M.gguf --local-dir ~/gguf`
+    - If that doesn't work, download directly on [huggingface site](https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF?show_file_info=Qwen3.5-35B-A3B-UD-IQ2_M.gguf). The **Download** button is on the right.
 > This is the 'brain'. Huggingface has many of these to try out. The size of the brain is relative to how smart they are, so the download could take a while.
 
 5. Install llama.cpp build dependencies in brew
@@ -43,23 +43,22 @@ Feel free to skip any steps if they don't apply to you.
 10. Serve it with the LLM.
 ```
 llama-server \
-    -m ~/gguf/Qwen3.5-9B-UD-Q6_K_XL.gguf \
+    -m ~/gguf/Qwen3.5-35B-A3B-UD-IQ2_M.gguf \
     --ctx-size 80000 \
     --parallel 2 \
     --temp 0.6 \
     --top-p 0.95 \
     --top-k 20 \
     --min-p 0.00 \
-    --repeat-penalty 1.05 \
     --cache-type-k q8_0 \
     --cache-type-v q8_0 \
+    --reasoning on \
     --host 0.0.0.0 \
-    --port 8001 \
-    --chat-template-kwargs '{"enable_thinking":false}'
+    --port 8001
 ```
  - Go to `http://localhost:8001`
 - Ask it anything. You have an LLM on your machine now.
-> See [this article](https://unsloth.ai/docs/models/qwen3.5#qwen3.5-small-0.8b-2b-4b-9b) on what these values should be for this specific LLM. Set `"enable_thinking":true` , start chatting, then expand the Reasoning bar to go down a rabbit hole. But now it also takes much longer to respond.
+> See [this article](https://unsloth.ai/docs/models/qwen3.5) on what these values should be for this specific LLM.
 
 > See the [README](https://github.com/ggml-org/llama.cpp/tree/master/tools/server#llamacpp-http-server) for explanation on what the parameters do.
 You might find that your computer grinds to a halt, it's the way with these things.
