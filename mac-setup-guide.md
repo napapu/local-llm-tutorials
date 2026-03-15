@@ -50,7 +50,9 @@ llama-server \
     --top-p 0.95 \
     --top-k 20 \
     --min-p 0.00 \
-    --repeat-penalty 1.1 \
+    --repeat-penalty 1.05 \
+    --cache-type-k q8_0 \
+    --cache-type-v q8_0 \
     --host 0.0.0.0 \
     --port 8001 \
     --chat-template-kwargs '{"enable_thinking":false}'
@@ -64,4 +66,6 @@ You might find that your computer grinds to a halt, it's the way with these thin
 
 ## Next steps
 1. Keep chatting, up to you.
-2. [Set up Claude Code](claude-code-setup-guide.md)
+2. Set up a coding agent
+   - [Set up OpenCode](opencode-setup-guide.md) 
+   - [Set up Claude Code](claude-code-setup-guide.md)
