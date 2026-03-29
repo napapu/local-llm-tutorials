@@ -2,8 +2,6 @@
 
 ## OpenCode Desktop
 1. Install [OpenCode Desktop](https://opencode.ai/download).
-> It is in (Beta) at time of writing and somewhat buggy.
-> Install this anyway, it makes setting up local LLM easier.
 
 2. Find any repository as a playground.
 > For example `https://github.com/karpathy/autoresearch`
@@ -29,7 +27,7 @@ It will be pre-selected to the free model available. Change it to Qwen3.5-34B th
 > See https://opencode.ai/docs/zen/#pricing for more.
 10. Start chatting! Ask `What is this repository about?`
 
-## OpenCode 
+## OpenCode CLI
 This assumes that your custom provider for LlamaCPP - Qwen3.5-34B has been set up.
 
 1. Install [OpenCode Terminal](https://opencode.ai/download).
